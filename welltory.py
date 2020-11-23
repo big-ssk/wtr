@@ -27,7 +27,8 @@ with open('README.md', 'w') as file:
     for instance in validate(os.getcwd()):
         for error in instance:
             try:
-                message = f"File: {error.instance['id']}.json, {error.message}, {error.instance['event']}.schema"
+                message = f"File: {error.instance['id']}.json. Error: {error.message}. " \
+                          f"Schema: {error.instance['event']}.schema"
                 print(message, sep='\n', file=file)
             except (TypeError, KeyError):
                 pass
