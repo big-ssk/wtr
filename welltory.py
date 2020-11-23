@@ -29,6 +29,6 @@ with open('README.md', 'w') as file:
             try:
                 message = f"File: {error.instance['id']}.json. Error: {error.message}. " \
                           f"Schema: {error.instance['event']}.schema"
-                print(message, sep='\n', file=file)
+                print(message, end='\n', file=file)
             except (TypeError, KeyError):
                 pass
